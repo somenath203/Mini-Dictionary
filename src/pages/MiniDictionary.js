@@ -113,10 +113,10 @@ const DictionaryPage = () => {
                                 {resultWord ? resultWord : 'Invalid Word or no word entered in the input field'}
                             </Typography>
                             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                                Meaning: {definitionOfWord ? definitionOfWord : 'Cannot generate meaning of this word'}.
+                                Meaning: {definitionOfWord ? definitionOfWord : 'Cannot generate meaning of this word.'}
                             </Typography>
                             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                                Parts Of Speech: {partsOfSpeech ? partsOfSpeech : 'Cannot detect parts of speech of this word'}.
+                                Parts Of Speech: {partsOfSpeech ? partsOfSpeech : 'Cannot detect parts of speech of this word.'}
                             </Typography>
                         </>}
                     </Box>
