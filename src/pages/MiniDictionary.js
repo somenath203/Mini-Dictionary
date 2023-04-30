@@ -17,7 +17,6 @@ const DictionaryPage = () => {
     const [resultWord, setResultWord] = useState();
     const [partsOfSpeech, setPartsOfSpeech] = useState();
     const [definitionOfWord, setDefinitionOfWord] = useState();
-    const [exampleOfWord, setExampleofWord] = useState();
 
     const [loading, setLoading] = useState();
 
@@ -40,18 +39,7 @@ const DictionaryPage = () => {
 
         setLoading(true);
 
-        try {
-
-            const { data } = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${textInput}`);
-
-            setLoading(false);
-
-            setResultWord(data[0].word);
-            setPartsOfSpeech(data[0].meanings[0].partOfSpeech);
-            setDefinitionOfWord(data[0].meanings[0].definitions[0].definition);
-
-
-        } catch (error) {
+        if (!textInput) {
 
             setLoading(false);
 
@@ -59,7 +47,30 @@ const DictionaryPage = () => {
             setPartsOfSpeech('');
             setDefinitionOfWord('');
 
-            console.log(error);
+        } else {
+
+            try {
+
+                const { data } = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${textInput}`);
+
+                setLoading(false);
+
+                setResultWord(data[0].word);
+                setPartsOfSpeech(data[0].meanings[0].partOfSpeech);
+                setDefinitionOfWord(data[0].meanings[0].definitions[0].definition);
+
+
+            } catch (error) {
+
+                setLoading(false);
+
+                setResultWord('');
+                setPartsOfSpeech('');
+                setDefinitionOfWord('');
+
+                console.log(error);
+
+            };
 
         };
 

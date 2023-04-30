@@ -5,7 +5,7 @@ const MiniDictionary = () => {
     return (
         <div className="min-h-screen flex items-center flex-col bg-gradient-to-b from-blue-50 to-blue-200">
 
-            <div className='flex items-center justify-center flex-col mt-52'>
+            <div className='flex items-center justify-center flex-col mt-52 p-5'>
 
                 <p className='font-siliguri text-xl lg:text-2xl text-blue-800 font-semibold tracking-wide text-center'>Mini Dictionary</p>
 
